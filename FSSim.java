@@ -5,7 +5,7 @@ public class FSSim{
 			board.initializeE();
 		else
 			board.initializeF();
-		if(args[2] != null && args[3] != null)
+		if(args.length > 2)
 			board.makeEmptySpot(Integer.parseInt(args[2]),Integer.parseInt(args[3]));
 		else
 			board.makeEmptySpot();
