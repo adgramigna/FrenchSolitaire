@@ -39,6 +39,15 @@ public class FSBoard{
 		board[board.length/2][board.length/2] = 0;
 	}
 
+	public void makeEmptySpot(int emptyRow, int emptyCol){
+		if(board[emptyRow][emptyCol] == 1)
+			board[emptyRow][emptyCol] = 0;
+		else
+			System.out.println("Try again: Your board has no empty spaces.");
+	
+
+	}
+
 	public void printBoard(){
 		for(int i = 0; i < board.length; i++){
 			for(int j = 0; j<board[0].length; j++){

@@ -5,7 +5,10 @@ public class FSSim{
 			board.initializeE();
 		else
 			board.initializeF();
-		board.makeEmptySpot();
+		if(args[2] != null && args[3] != null)
+			board.makeEmptySpot(Integer.parseInt(args[2]),Integer.parseInt(args[3]));
+		else
+			board.makeEmptySpot();
 		board.printBoard();
 	}
 }
