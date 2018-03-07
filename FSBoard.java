@@ -23,7 +23,10 @@ public class FSBoard{
 				}
 			}
 		}
-		board[0][board[0].length/2-1] = 0;
+	}
+
+	public void makeEmptySpot(){
+		board[board.length/2][board.length/2] = 0;
 	}
 
 	public void printBoard(){
