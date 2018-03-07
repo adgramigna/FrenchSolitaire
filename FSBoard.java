@@ -54,9 +54,9 @@ public class FSBoard{
 				if(board[i][j] == -1)
 					System.out.print(' ');
 				if(board[i][j] == 1)
-					System.out.print('o');
+					System.out.print('.');
 				if(board[i][j] == 0)
-					System.out.print('-');
+					System.out.print('o');
 				System.out.print(' ');
 			}
 			System.out.println();
