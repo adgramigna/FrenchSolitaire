@@ -13,7 +13,7 @@ public class FSBoard{
 		board = new int[rows][cols];
 	}
 
-	public void initialize(){
+	public void initializeF(){
 		for(int i = 0; i < board.length; i++){
 			for(int j = 0; j<board[0].length; j++){
 				board[i][j] = -1;
@@ -21,6 +21,16 @@ public class FSBoard{
 					if ((i == k || i == board.length-k-1) && (j >= board[0].length/2-k-1 && j <= board[0].length/2+k+1))
 						board[i][j] = 1;
 				}
+			}
+		}
+	}
+
+	public void initializeE(){
+		for(int i = 0; i < board.length; i++){
+			for(int j = 0; j<board[0].length; j++){
+				board[i][j] = -1;
+				if(j <= board[0].length/2+1 && j >= board[0].length/2-1 || i >= board.length/2-1 && i <= board.length/2+1)
+					board[i][j] = 1;
 			}
 		}
 	}
