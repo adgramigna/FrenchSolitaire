@@ -10,5 +10,10 @@ public class FSSim{
 		else
 			board.makeInitialEmpty();
 		board.printAll();
+		board.move();
+		board.printAll();
+		board.move();
+		board.printAll();
+
 	}
 }
