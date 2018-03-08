@@ -15,7 +15,9 @@ public class FSBoard{
 	private int cols;
 	private int empty;
 	private int nonExistent;
-	private int realSpaces;
+	private int total;
+	private int wins;
+	private int losses;
 	private List<Space> emptySpaces;
 	private List<Space> filledSpaces;
 	private List<Space> potentialMoveSpaces;
@@ -30,11 +32,15 @@ public class FSBoard{
 		emptySpaces = new ArrayList<Space>();
 		filledSpaces = new ArrayList<Space>();
 		potentialMoveSpaces = new ArrayList<Space>();
-		states = new ArrayList<Integer>()
+		states = new ArrayList<Integer>();
+		wins = 0;
 	}
 
-	public void setup(String type){
-
+	public void setup(String type, int emptyRow, int emptyCol){
+		initialize(type);
+		makeInitialEmpty(emptyRow, emptyCol);
+		total = emptySpaces.size()+filledSpaces.size();
+		//printAll();
 	}
 
 	public void initialize(String type){
@@ -115,8 +121,8 @@ public class FSBoard{
 		//System.out.println(rand2);
 		Space chosenFrom = from.get(rand2);
 
-		System.out.println(to.toString());
-		System.out.println(chosenFrom.toString());
+		//System.out.println(to.toString());
+		//System.out.println(chosenFrom.toString());
 		Space over;
 		if (chosenFrom.getX()-to.getX() == 0 && chosenFrom.getY()-to.getY() > 0){
 			over = spaces[to.getX()][to.getY()+1];
@@ -150,11 +156,27 @@ public class FSBoard{
 				potentialMoveSpaces.add(s);
 		}
 	}
-	public void play(){
+	public void trial(){
 		while(potentialMoveSpaces.size()>0){
 			move();
-			printAll();
+			//printAll();
 		}
+		if(isVictory())
+			wins++;
+		else
+			losses++;
+	}
+
+	public boolean isVictory(){
+		return filledSpaces.size() == 1;
+	}
+
+	public int getWins(){
+		return wins;
+	}
+
+	public int getLosses(){
+		return losses;
 	}
 
 	public void printMisc(){
@@ -175,6 +197,12 @@ public class FSBoard{
 		}
 	}
 
+	public void printSizes(){
+		System.out.println("Empty Size:" + emptySpaces.size());
+		System.out.println("Filled Size:" + filledSpaces.size());
+		System.out.println("Move Size:" + potentialMoveSpaces.size());
+	}
+
 	public void printBoard(){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
@@ -193,6 +221,7 @@ public class FSBoard{
 	public void printAll(){
 		//printMisc();
 		//printSpaces();
+		printSizes();
 		printBoard();
 	}
 }
