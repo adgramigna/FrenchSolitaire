@@ -15,11 +15,11 @@ public class FSBoard{
 	private int cols;
 	private int empty;
 	private int nonExistent;
+	private int realSpaces;
 	private List<Space> emptySpaces;
 	private List<Space> filledSpaces;
 	private List<Space> potentialMoveSpaces;
-	private int filledCounter;
-
+	private List<Integer> states;
 
 	public FSBoard(int rows, int cols){
 		spaces = new Space[rows][cols];
@@ -30,6 +30,21 @@ public class FSBoard{
 		emptySpaces = new ArrayList<Space>();
 		filledSpaces = new ArrayList<Space>();
 		potentialMoveSpaces = new ArrayList<Space>();
+		states = new ArrayList<Integer>()
+	}
+
+	public void initialize(String type){
+		switch(type){
+			case "F":
+				initializeF();
+				break;
+			case "E":
+				initializeE();
+				break;
+			default:
+				System.out.println("Problem with initialization!");
+				break;
+		}
 	}
 
 	public void initializeF(){
