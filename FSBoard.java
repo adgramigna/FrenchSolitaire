@@ -14,9 +14,10 @@ public class FSBoard{
 	private int cols;
 	private int empty;
 	private int nonExistent;
-	private List<List<Integer>> emptyIndecies;
-	private List<List<Integer>> filledIndecies;
+	private List<Space> emptyIndecies;
+	private List<Space> filledIndecies;
 	private int filledCounter;
+	private Space[][] spaces;
 
 
 	public FSBoard(int rows, int cols){
@@ -25,31 +26,23 @@ public class FSBoard{
 		this.cols = cols;
 		empty = 0;
 		nonExistent = rows*cols;
-		emptyIndecies = new ArrayList<List<Integer>>();
-		filledIndecies = new ArrayList<List<Integer>>();
-		filledCounter = 0;
-	}
-
-	public void initializeIndecies(){
-		for(int i = 0; i < rows*cols; i++)  {
-        	emptyIndecies.add(new ArrayList<Integer>());
-    	}
-    	for(int i = 0; i < rows*cols; i++)  {
-        	filledIndecies.add(new ArrayList<Integer>());
-    	}
+		emptyIndecies = new ArrayList<Space>();
+		filledIndecies = new ArrayList<Space>();
+		spaces = new Space[rows][cols];
 	}
 
 	public void initializeF(){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
 				board[i][j] = -1;
+				spaces[i][j] = new Space(i,j);
+				spaces[i][j].setValue(-1);
 				for (int k = 0; k <= rows/2; k++){
 					if ((i == k || i == rows-k-1) && (j >= cols/2-k-1 && j <= cols/2+k+1)){
 						board[i][j] = 1;
+						spaces[i][j].setValue(1);
 						nonExistent--;
-						filledIndecies.get(filledCounter).add(i);
-						filledIndecies.get(filledCounter).add(j);
-						filledCounter++;
+						filledIndecies.add(spaces[i][j]);
 					}
 				}
 			}
@@ -60,12 +53,13 @@ public class FSBoard{
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
 				board[i][j] = -1;
+				spaces[i][j] = new Space(i,j);
+				spaces[i][j].setValue(-1);
 				if(j <= cols/2+1 && j >= cols/2-1 || i >= rows/2-1 && i <= rows/2+1){
 					board[i][j] = 1;
+					spaces[i][j].setValue(1);
 					nonExistent--;
-					filledIndecies.get(filledCounter).add(i);
-					filledIndecies.get(filledCounter).add(j);
-					filledCounter++;
+					filledIndecies.add(spaces[i][j]);
 				}
 			}
 		}
@@ -73,15 +67,12 @@ public class FSBoard{
 
 	public void makeInitialEmpty(){
 		board[rows/2][rows/2] = 0;
+		spaces[rows/2][rows/2].setValue(0);
 		empty++;
-		emptyIndecies.get(0).add(rows/2);
-		emptyIndecies.get(0).add(rows/2);
+		emptyIndecies.add(spaces[rows/2][cols/2]);
 		for(int i = 0; i < filledIndecies.size(); i++){
-			if(!filledIndecies.get(i).isEmpty()){
-				if(filledIndecies.get(i).get(0) == rows/2 && filledIndecies.get(i).get(1) == rows/2){
-					filledIndecies.get(i).remove(1);
-					filledIndecies.get(i).remove(0);
-				}
+			if(filledIndecies.get(i).getX() == rows/2 && filledIndecies.get(i).getY() == rows/2){
+				filledIndecies.remove(i);
 			}
 		}
 	}
@@ -89,15 +80,12 @@ public class FSBoard{
 	public void makeInitialEmpty(int emptyRow, int emptyCol){
 		if(board[emptyRow][emptyCol] == 1){
 			board[emptyRow][emptyCol] = 0;
+			spaces[emptyRow][emptyCol].setValue(0);
 			empty++;
-			emptyIndecies.get(0).add(emptyRow);
-			emptyIndecies.get(0).add(emptyCol);	
+			emptyIndecies.add(spaces[emptyRow][emptyCol]);
 			for(int i = 0; i < filledIndecies.size(); i++){
-				if(!filledIndecies.get(i).isEmpty()){
-					if(filledIndecies.get(i).get(0) == emptyRow && filledIndecies.get(i).get(1) == emptyCol){
-						filledIndecies.get(i).remove(1);
-						filledIndecies.get(i).remove(0);
-					}
+				if(filledIndecies.get(i).getX() == emptyRow && filledIndecies.get(i).getY() == emptyCol){
+					filledIndecies.remove(i);
 				}
 			}
 		}
@@ -112,12 +100,10 @@ public class FSBoard{
 	public void printBoard(){
 		System.out.println("NE:" + nonExistent + " Empty:"+ empty);
 		for(int i=0; i<emptyIndecies.size(); i++){
-			if(!emptyIndecies.get(i).isEmpty())
-				System.out.println(i+" "+emptyIndecies.get(i));
+			System.out.println(i+" "+emptyIndecies.get(i).toString());
 		}
 		for(int i=0; i<filledIndecies.size(); i++){
-			if(!filledIndecies.get(i).isEmpty())
-				System.out.println(i+" "+filledIndecies.get(i));
+			System.out.println(i+" "+filledIndecies.get(i).toString());
 		}
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
