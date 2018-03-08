@@ -105,7 +105,7 @@ public class FSBoard{
 			from.add(spaces[to.getX()][to.getY()+2]);
 
 		int rand2 = (int)(Math.random()*from.size());
-		System.out.println(rand2);
+		//System.out.println(rand2);
 		Space chosenFrom = from.get(rand2);
 
 		System.out.println(to.toString());
@@ -133,18 +133,14 @@ public class FSBoard{
 		filledSpaces.remove(over);
 		filledSpaces.remove(chosenFrom);
 		emptySpaces.remove(to);
-		potentialMoveSpaces.remove(to);
+		potentialMoveSpaces.clear();
 
 		for(Space s: emptySpaces){
-			if(!potentialMoveSpaces.contains(s)){
 				if((s.getY()-2 >= 0 && spaces[s.getX()][s.getY()-2].getValue() == 1 && spaces[s.getX()][s.getY()-1].getValue()==1)
 				|| (s.getY()+2 < cols && spaces[s.getX()][s.getY()+2].getValue() == 1 && spaces[s.getX()][s.getY()+1].getValue()==1)
 				|| (s.getX()-2 >= 0 && spaces[s.getX()-2][s.getY()].getValue() == 1 && spaces[s.getX()-1][s.getY()].getValue()==1)
 				|| (s.getX()+2 < rows && spaces[s.getX()+2][s.getY()].getValue() == 1 && spaces[s.getX()+1][s.getY()].getValue()==1))
 				potentialMoveSpaces.add(s);
-			}
-			else
-				potentialMoveSpaces.remove(s);
 		}
 	}
 	public void play(){
@@ -152,7 +148,6 @@ public class FSBoard{
 			move();
 			printAll();
 		}
-		printAll();
 	}
 
 	public void printMisc(){
@@ -189,8 +184,8 @@ public class FSBoard{
 	}
 
 	public void printAll(){
-		printMisc();
-		printSpaces();
+		//printMisc();
+		//printSpaces();
 		printBoard();
 	}
 }
