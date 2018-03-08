@@ -105,6 +105,7 @@ public class FSBoard{
 			from.add(spaces[to.getX()][to.getY()+2]);
 
 		int rand2 = (int)(Math.random()*from.size());
+		System.out.println(rand2);
 		Space chosenFrom = from.get(rand2);
 
 		System.out.println(to.toString());
@@ -142,7 +143,16 @@ public class FSBoard{
 				|| (s.getX()+2 < rows && spaces[s.getX()+2][s.getY()].getValue() == 1 && spaces[s.getX()+1][s.getY()].getValue()==1))
 				potentialMoveSpaces.add(s);
 			}
+			else
+				potentialMoveSpaces.remove(s);
 		}
+	}
+	public void play(){
+		while(potentialMoveSpaces.size()>0){
+			move();
+			printAll();
+		}
+		printAll();
 	}
 
 	public void printMisc(){
@@ -151,15 +161,15 @@ public class FSBoard{
 
 	public void printSpaces(){
 		for(int i=0; i<emptySpaces.size(); i++){
-			System.out.println(i+" "+emptySpaces.get(i).toString());
+			System.out.println("Empty: "+i+" "+emptySpaces.get(i).toString());
 		}
 		System.out.println();
 		for(int i=0; i<filledSpaces.size(); i++){
-			System.out.println(i+" "+filledSpaces.get(i).toString());
+			System.out.println("Fill: "+i+" "+filledSpaces.get(i).toString());
 		}
 		System.out.println();
 		for(int i=0; i<potentialMoveSpaces.size(); i++){
-			System.out.println(i+" "+potentialMoveSpaces.get(i).toString());
+			System.out.println("Move: "+i+" "+potentialMoveSpaces.get(i).toString());
 		}
 	}
 

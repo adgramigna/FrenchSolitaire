@@ -9,11 +9,7 @@ public class FSSim{
 			board.makeInitialEmpty(Integer.parseInt(args[2]),Integer.parseInt(args[3]));
 		else
 			board.makeInitialEmpty();
-		board.printAll();
-		board.move();
-		board.printAll();
-		board.move();
-		board.printAll();
+		board.play();
 
 	}
 }
