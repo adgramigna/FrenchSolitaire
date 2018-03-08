@@ -33,6 +33,10 @@ public class FSBoard{
 		states = new ArrayList<Integer>()
 	}
 
+	public void setup(String type){
+
+	}
+
 	public void initialize(String type){
 		switch(type){
 			case "F":
@@ -73,18 +77,6 @@ public class FSBoard{
 					nonExistent--;
 					filledSpaces.add(spaces[i][j]);
 				}
-			}
-		}
-	}
-
-	public void makeInitialEmpty(){
-		spaces[rows/2][rows/2].setValue(0);
-		empty++;
-		emptySpaces.add(spaces[rows/2][cols/2]);
-		potentialMoveSpaces.add(spaces[rows/2][cols/2]);
-		for(int i = 0; i < filledSpaces.size(); i++){
-			if(filledSpaces.get(i).getX() == rows/2 && filledSpaces.get(i).getY() == rows/2){
-				filledSpaces.remove(i);
 			}
 		}
 	}
