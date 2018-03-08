@@ -9,7 +9,7 @@ import java.util.*;
 
 public class FSBoard{
 
-	private int[][] board;
+	private Space[][] spaces;
 	private int rows;
 	private int cols;
 	private int empty;
@@ -17,29 +17,25 @@ public class FSBoard{
 	private List<Space> emptyIndecies;
 	private List<Space> filledIndecies;
 	private int filledCounter;
-	private Space[][] spaces;
 
 
 	public FSBoard(int rows, int cols){
-		board = new int[rows][cols];
+		spaces = new Space[rows][cols];
 		this.rows = rows;
 		this.cols = cols;
 		empty = 0;
 		nonExistent = rows*cols;
 		emptyIndecies = new ArrayList<Space>();
 		filledIndecies = new ArrayList<Space>();
-		spaces = new Space[rows][cols];
 	}
 
 	public void initializeF(){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
-				board[i][j] = -1;
 				spaces[i][j] = new Space(i,j);
 				spaces[i][j].setValue(-1);
 				for (int k = 0; k <= rows/2; k++){
 					if ((i == k || i == rows-k-1) && (j >= cols/2-k-1 && j <= cols/2+k+1)){
-						board[i][j] = 1;
 						spaces[i][j].setValue(1);
 						nonExistent--;
 						filledIndecies.add(spaces[i][j]);
@@ -52,11 +48,9 @@ public class FSBoard{
 	public void initializeE(){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
-				board[i][j] = -1;
 				spaces[i][j] = new Space(i,j);
 				spaces[i][j].setValue(-1);
 				if(j <= cols/2+1 && j >= cols/2-1 || i >= rows/2-1 && i <= rows/2+1){
-					board[i][j] = 1;
 					spaces[i][j].setValue(1);
 					nonExistent--;
 					filledIndecies.add(spaces[i][j]);
@@ -66,7 +60,6 @@ public class FSBoard{
 	}
 
 	public void makeInitialEmpty(){
-		board[rows/2][rows/2] = 0;
 		spaces[rows/2][rows/2].setValue(0);
 		empty++;
 		emptyIndecies.add(spaces[rows/2][cols/2]);
@@ -78,8 +71,7 @@ public class FSBoard{
 	}
 
 	public void makeInitialEmpty(int emptyRow, int emptyCol){
-		if(board[emptyRow][emptyCol] == 1){
-			board[emptyRow][emptyCol] = 0;
+		if(spaces[emptyRow][emptyCol].getValue() == 1){
 			spaces[emptyRow][emptyCol].setValue(0);
 			empty++;
 			emptyIndecies.add(spaces[emptyRow][emptyCol]);
@@ -97,25 +89,38 @@ public class FSBoard{
 
 	}
 
-	public void printBoard(){
+	public void printMisc(){
 		System.out.println("NE:" + nonExistent + " Empty:"+ empty);
+	}
+
+	public void printFilledAndEmpty(){
 		for(int i=0; i<emptyIndecies.size(); i++){
 			System.out.println(i+" "+emptyIndecies.get(i).toString());
 		}
+		System.out.println();
 		for(int i=0; i<filledIndecies.size(); i++){
 			System.out.println(i+" "+filledIndecies.get(i).toString());
 		}
+	}
+
+	public void printBoard(){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
-				if(board[i][j] == -1)
+				if(spaces[i][j].getValue() == -1)
 					System.out.print(' ');
-				if(board[i][j] == 1)
+				if(spaces[i][j].getValue() == 1)
 					System.out.print('.');
-				if(board[i][j] == 0)
+				if(spaces[i][j].getValue() == 0)
 					System.out.print('o');
 				System.out.print(' ');
 			}
 			System.out.println();
 		}
+	}
+
+	public void printAll(){
+		printMisc();
+		printFilledAndEmpty();
+		printBoard();
 	}
 }
