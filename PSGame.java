@@ -10,7 +10,7 @@ public class PSGame{
 	private List<Space> emptySpaces;
 	private List<Space> filledSpaces;
 	private List<Space> potentialMoveSpaces;
-	private List<Integer> states;
+	private List<Integer[]> states;
 	private int moves;
 	
 	public PSGame(FSBoard board){
@@ -21,13 +21,18 @@ public class PSGame{
 		emptySpaces = new ArrayList<Space>();
 		filledSpaces = new ArrayList<Space>();
 		potentialMoveSpaces = new ArrayList<Space>();
-		states = new ArrayList<Integer>();
+		states = new ArrayList<Integer[]>();
 		moves = 0;
 	}
 
+	public void initialize(){
+		initializeArrayLists();
+		updateStates();
+	}
+
 	public void initializeArrayLists(){
-		for (int i = 0; i < spaces.length; i++){
-			for(int j = 0; j < spaces[0].length; j++){
+		for (int i = 0; i < rows; i++){
+			for(int j = 0; j < cols; j++){
 				Space space = spaces[i][j];
 				int value = space.getValue();
 				if(value == 0){
@@ -38,8 +43,20 @@ public class PSGame{
 					filledSpaces.add(space);
 				}
 			}
+		} 
+	}
+
+
+	public void updateStates(){
+		Integer[] state = new Integer[rows*cols];
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < cols; j++){
+				Space space = spaces[i][j];
+				int value = space.getValue();
+				state[i*rows+j] = value;
+			}
 		}
-		//printAll(); 
+		states.add(state);
 	}
 
 	public void move(){
@@ -94,6 +111,8 @@ public class PSGame{
 				|| (s.getX()+2 < rows && spaces[s.getX()+2][s.getY()].getValue() == 1 && spaces[s.getX()+1][s.getY()].getValue()==1))
 				potentialMoveSpaces.add(s);
 		}
+		moves++;
+		updateStates();
 	}
 
 	public FSBoard getBoard(){
@@ -101,11 +120,12 @@ public class PSGame{
 	}
 
 	public void trial(){
+		printAll();
 		while(potentialMoveSpaces.size()>0){
 			move();
-			//printAll();
+			printAll();
 		}
-		//printResult();
+		printResult();
 	}
 
 	public boolean isVictory(){
@@ -121,8 +141,14 @@ public class PSGame{
 		// 	System.out.println("Fill: "+i+" "+filledSpaces.get(i).toString());
 		// }
 		// System.out.println();
-		for(int i=0; i<potentialMoveSpaces.size(); i++){
-			System.out.println("Move: "+i+" "+potentialMoveSpaces.get(i).toString());
+		// for(int i=0; i<potentialMoveSpaces.size(); i++){
+		// 	System.out.println("Move: "+i+" "+potentialMoveSpaces.get(i).toString());
+		// }
+		for(int i=0; i<states.size(); i++){
+			for(int j = 0; j<states.get(i).length; j++){
+				System.out.println("States: "+i+" "+j+" "+states.get(i)[j]);
+			}
+			System.out.println();
 		}
 	}
 
@@ -133,6 +159,19 @@ public class PSGame{
 	}
 
 	public void printBoard(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j<cols; j++){
+				if(spaces[i][j].getValue() == -1)
+					System.out.print(' ');
+				if(spaces[i][j].getValue() == 1)
+					System.out.print('.');
+				if(spaces[i][j].getValue() == 0)
+					System.out.print('o');
+				System.out.print(' ');
+			}
+			System.out.println();
+		}
+		System.out.println();
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
 				if(spaces[i][j].getValue() == -1)
