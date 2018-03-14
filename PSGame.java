@@ -141,15 +141,16 @@ public class PSGame{
 		// 	System.out.println("Fill: "+i+" "+filledSpaces.get(i).toString());
 		// }
 		// System.out.println();
-		// for(int i=0; i<potentialMoveSpaces.size(); i++){
-		// 	System.out.println("Move: "+i+" "+potentialMoveSpaces.get(i).toString());
-		// }
-		for(int i=0; i<states.size(); i++){
-			for(int j = 0; j<states.get(i).length; j++){
-				System.out.println("States: "+i+" "+j+" "+states.get(i)[j]);
-			}
-			System.out.println();
+		for(int i=0; i<potentialMoveSpaces.size(); i++){
+			System.out.println("Move: "+i+" "+potentialMoveSpaces.get(i).toString());
 		}
+		System.out.println();
+		// for(int i=0; i<states.size(); i++){
+		// 	for(int j = 0; j<states.get(i).length; j++){
+		// 		System.out.println("States: "+i+" "+j+" "+states.get(i)[j]);
+		// 	}
+		// 	System.out.println();
+		// }
 	}
 
 	public void printSizes(){
@@ -159,30 +160,17 @@ public class PSGame{
 	}
 
 	public void printBoard(){
-		for(int i = 0; i < rows; i++){
-			for(int j = 0; j<cols; j++){
-				if(spaces[i][j].getValue() == -1)
-					System.out.print(' ');
-				if(spaces[i][j].getValue() == 1)
-					System.out.print('.');
-				if(spaces[i][j].getValue() == 0)
-					System.out.print('o');
+		Integer[] state = states.get(moves);
+		for(int i = 0; i < state.length; i++){
+			if(state[i] == -1)
 				System.out.print(' ');
-			}
-			System.out.println();
-		}
-		System.out.println();
-		for(int i = 0; i < rows; i++){
-			for(int j = 0; j<cols; j++){
-				if(spaces[i][j].getValue() == -1)
-					System.out.print(' ');
-				if(spaces[i][j].getValue() == 1)
-					System.out.print('.');
-				if(spaces[i][j].getValue() == 0)
-					System.out.print('o');
-				System.out.print(' ');
-			}
-			System.out.println();
+			if(state[i] == 1)
+				System.out.print('.');
+			if(state[i] == 0)
+				System.out.print('o');
+			System.out.print(' ');
+			if (i%rows == 6)
+				System.out.println();
 		}
 	}
 
