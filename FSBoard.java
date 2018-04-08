@@ -39,6 +39,10 @@ public class FSBoard{
 		return cols;
 	}
 
+	public String getType(){
+		return type;
+	}
+
 	public void initialize(){
 		switch(type){
 			case "F":
