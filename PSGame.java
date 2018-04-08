@@ -64,24 +64,25 @@ public class PSGame{
 		int rand = (int)(Math.random()*potentialMoveSpaces.size());
 		Space to = potentialMoveSpaces.get(rand);
 		List<Space> from = new ArrayList<Space>();
-		findFrom(to, from);
+		findFrom(type, to, from);
 		int rand2 = (int)(Math.random()*from.size());
 		Space chosenFrom = from.get(rand2);
 
-		//System.out.println(to.toString());
-		//System.out.println(chosenFrom.toString());
+		System.out.println(to.toString());
+		System.out.println(chosenFrom.toString());
 		Space over = findOver(to, chosenFrom);
 
 		chosenFrom.setValue(0);
 		over.setValue(0);
 		to.setValue(1);
 
-		updateArrayLists(to, over, chosenFrom);
+		updateArrayLists(type, to, over, chosenFrom);
+		
 		updateStates();
 		//printSizes();
 	}
 
-	public void findFrom(Space to, List<Space> from){
+	public void findFrom(String type, Space to, List<Space> from){
 		if (to.getX()-2 >= 0 && spaces[to.getX()-2][to.getY()].getValue()==1 && spaces[to.getX()-1][to.getY()].getValue()==1)
 			from.add(spaces[to.getX()-2][to.getY()]);
 		if (to.getX()+2 < rows && spaces[to.getX()+2][to.getY()].getValue()==1 && spaces[to.getX()+1][to.getY()].getValue()==1)
@@ -90,24 +91,32 @@ public class PSGame{
 			from.add(spaces[to.getX()][to.getY()-2]);
 		if (to.getY()+2 < cols && spaces[to.getX()][to.getY()+2].getValue()==1 && spaces[to.getX()][to.getY()+1].getValue()==1)
 			from.add(spaces[to.getX()][to.getY()+2]);
+		if(type.equals("T")){
+			if (to.getY()-2 >= 0 && to.getX()-2 >= 0 && spaces[to.getX()-2][to.getY()-2].getValue()==1 && spaces[to.getX()-1][to.getY()-1].getValue()==1)
+				from.add(spaces[to.getX()-2][to.getY()-2]);
+			if (to.getY()+2 < cols && to.getX()+2 < rows && spaces[to.getX()+2][to.getY()+2].getValue()==1 && spaces[to.getX()+1][to.getY()+1].getValue()==1)
+				from.add(spaces[to.getX()+2][to.getY()+2]);
+		}
 	}
 
 	public Space findOver(Space to, Space chosenFrom){
-		if (chosenFrom.getX()-to.getX() == 0 && chosenFrom.getY()-to.getY() > 0){
+		if (chosenFrom.getX()-to.getX() == 0 && chosenFrom.getY()-to.getY() > 0)
 			return spaces[to.getX()][to.getY()+1];
-		}
-		else if (chosenFrom.getX()-to.getX() == 0 && chosenFrom.getY()-to.getY() < 0){
+		else if (chosenFrom.getX()-to.getX() == 0 && chosenFrom.getY()-to.getY() < 0)
 			return spaces[to.getX()][to.getY()-1];
-		}
-		else if (chosenFrom.getX()-to.getX() > 0 && chosenFrom.getY()-to.getY() == 0){
+		else if (chosenFrom.getX()-to.getX() > 0 && chosenFrom.getY()-to.getY() == 0)
 			return spaces[to.getX()+1][to.getY()];
-		}
-		else{
+		else if (chosenFrom.getX()-to.getX() < 0 && chosenFrom.getY()-to.getY() == 0)
 			return spaces[to.getX()-1][to.getY()];
-		}
+		else if (chosenFrom.getX()-to.getX() > 0 && Math.abs(chosenFrom.getY()-to.getY()) == 2)
+			return spaces[to.getX()+1][to.getY()+1];
+		else if (chosenFrom.getX()-to.getX() < 0 && Math.abs(chosenFrom.getY()-to.getY()) == 2)
+			return spaces[to.getX()-1][to.getY()-1];
+		else
+			return null;
 	}
 
-	public void updateArrayLists(Space to, Space chosenFrom, Space over){
+	public void updateArrayLists(String type, Space to, Space chosenFrom, Space over){
 		emptySpaces.add(over);
 		emptySpaces.add(chosenFrom);
 		filledSpaces.add(to);
@@ -121,7 +130,13 @@ public class PSGame{
 				|| (s.getX()-2 >= 0 && spaces[s.getX()-2][s.getY()].getValue() == 1 && spaces[s.getX()-1][s.getY()].getValue()==1)
 				|| (s.getX()+2 < rows && spaces[s.getX()+2][s.getY()].getValue() == 1 && spaces[s.getX()+1][s.getY()].getValue()==1))
 				potentialMoveSpaces.add(s);
+				if(type.equals("T")){
+					if ((s.getY()-2 >= 0 && s.getX()-2 >= 0 && spaces[s.getX()-2][s.getY()-2].getValue()==1 && spaces[s.getX()-1][s.getY()-1].getValue()==1)
+					|| (s.getY()+2 < cols && s.getX()+2 < rows && spaces[s.getX()+2][s.getY()+2].getValue()==1 && spaces[s.getX()+1][s.getY()+1].getValue()==1))
+					potentialMoveSpaces.add(s);
+				}
 		}
+		
 	}
 
 	public FSBoard getBoard(){
