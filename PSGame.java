@@ -12,7 +12,6 @@ public class PSGame{
 	private List<Space> filledSpaces;
 	private List<Space> potentialMoveSpaces;
 	private List<Integer[]> states;
-	private int moves;
 	
 	public PSGame(FSBoard board){
 		this.board = board;
@@ -64,25 +63,25 @@ public class PSGame{
 		int rand = (int)(Math.random()*potentialMoveSpaces.size());
 		Space to = potentialMoveSpaces.get(rand);
 		List<Space> from = new ArrayList<Space>();
-		findFrom(type, to, from);
+		findFrom(to, from);
 		int rand2 = (int)(Math.random()*from.size());
 		Space chosenFrom = from.get(rand2);
 
-		System.out.println(to.toString());
-		System.out.println(chosenFrom.toString());
+		// System.out.println(to.toString());
+		// System.out.println(chosenFrom.toString());
 		Space over = findOver(to, chosenFrom);
 
 		chosenFrom.setValue(0);
 		over.setValue(0);
 		to.setValue(1);
 
-		updateArrayLists(type, to, over, chosenFrom);
+		updateArrayLists(to, over, chosenFrom);
 		
 		updateStates();
 		//printSizes();
 	}
 
-	public void findFrom(String type, Space to, List<Space> from){
+	public void findFrom(Space to, List<Space> from){
 		if (to.getX()-2 >= 0 && spaces[to.getX()-2][to.getY()].getValue()==1 && spaces[to.getX()-1][to.getY()].getValue()==1)
 			from.add(spaces[to.getX()-2][to.getY()]);
 		if (to.getX()+2 < rows && spaces[to.getX()+2][to.getY()].getValue()==1 && spaces[to.getX()+1][to.getY()].getValue()==1)
@@ -116,7 +115,7 @@ public class PSGame{
 			return null;
 	}
 
-	public void updateArrayLists(String type, Space to, Space chosenFrom, Space over){
+	public void updateArrayLists(Space to, Space chosenFrom, Space over){
 		emptySpaces.add(over);
 		emptySpaces.add(chosenFrom);
 		filledSpaces.add(to);
@@ -184,8 +183,11 @@ public class PSGame{
 	}
 
 	public void printBoard(Integer[] state){
-		// Integer[] state = states.get(moves);
 		for(int i = 0; i < state.length; i++){
+			if(i%cols == 0 && type.equals("T")){
+				for (int j = i/rows; j <= rows/2+1; j++)
+					System.out.print(' ');
+			}
 			if(state[i] == -1)
 				System.out.print(' ');
 			if(state[i] == 1)
@@ -193,7 +195,7 @@ public class PSGame{
 			if(state[i] == 0)
 				System.out.print('o');
 			System.out.print(' ');
-			if (i%rows == rows-1)
+			if (i%cols == cols-1)
 				System.out.println();
 		}
 		System.out.println();

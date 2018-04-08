@@ -99,7 +99,7 @@ public class FSBoard{
 	}
 
 	public void makeInitialEmpty(int emptyRow, int emptyCol){
-		if(spaces[emptyRow][emptyCol].getValue() == 1)
+		if(spaces[emptyRow][emptyCol].getValue() != -1)
 			spaces[emptyRow][emptyCol].setValue(0);
 		else
 			System.out.println("Try again: Your board has no empty spaces.");
