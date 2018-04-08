@@ -185,7 +185,7 @@ public class PSGame{
 	public void printBoard(Integer[] state){
 		for(int i = 0; i < state.length; i++){
 			if(i%cols == 0 && type.equals("T")){
-				for (int j = i/rows; j <= rows/2+1; j++)
+				for (int j = i/rows; j <= rows; j++)
 					System.out.print(' ');
 			}
 			if(state[i] == -1)
