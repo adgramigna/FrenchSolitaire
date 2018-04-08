@@ -13,15 +13,17 @@ public class FSBoard{
 	private Space[][] spaces;
 	private int rows;
 	private int cols;
+	private String type;
 
-	public FSBoard(int rows, int cols){
+	public FSBoard(String type, int rows, int cols){
 		spaces = new Space[rows][cols];
 		this.rows = rows;
 		this.cols = cols;
+		this.type = type;
 	}
 
-	public void setup(String type, int emptyRow, int emptyCol){
-		initialize(type);
+	public void setup(int emptyRow, int emptyCol){
+		initialize();
 		makeInitialEmpty(emptyRow, emptyCol);
 	}
 
@@ -37,13 +39,16 @@ public class FSBoard{
 		return cols;
 	}
 
-	public void initialize(String type){
+	public void initialize(){
 		switch(type){
 			case "F":
 				initializeF();
 				break;
 			case "E":
 				initializeE();
+				break;
+			case "T":
+				initializeT();
 				break;
 			default:
 				System.out.println("Problem with initialization!");
@@ -71,6 +76,18 @@ public class FSBoard{
 				spaces[i][j] = new Space(i,j);
 				spaces[i][j].setValue(-1);
 				if(j <= cols/2+1 && j >= cols/2-1 || i >= rows/2-1 && i <= rows/2+1){
+					spaces[i][j].setValue(1);
+				}
+			}
+		}
+	}
+
+	public void initializeT(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j<cols; j++){
+				spaces[i][j] = new Space(i,j);
+				spaces[i][j].setValue(-1);
+				if(i>=j){
 					spaces[i][j].setValue(1);
 				}
 			}

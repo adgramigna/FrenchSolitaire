@@ -22,7 +22,6 @@ public class PSGame{
 		filledSpaces = new ArrayList<Space>();
 		potentialMoveSpaces = new ArrayList<Space>();
 		states = new ArrayList<Integer[]>();
-		moves = 0;
 	}
 
 	public void initialize(){
@@ -111,8 +110,8 @@ public class PSGame{
 				|| (s.getX()+2 < rows && spaces[s.getX()+2][s.getY()].getValue() == 1 && spaces[s.getX()+1][s.getY()].getValue()==1))
 				potentialMoveSpaces.add(s);
 		}
-		moves++;
 		updateStates();
+		//printSizes();
 	}
 
 	public FSBoard getBoard(){
@@ -120,12 +119,12 @@ public class PSGame{
 	}
 
 	public void trial(){
-		printAll();
+		//printAll();
 		while(potentialMoveSpaces.size()>0){
 			move();
-			printAll();
+			//printAll();
 		}
-		printResult();
+		//printResult();
 	}
 
 	public boolean isVictory(){
@@ -159,8 +158,8 @@ public class PSGame{
 		System.out.println("Move Size:" + potentialMoveSpaces.size());
 	}
 
-	public void printBoard(){
-		Integer[] state = states.get(moves);
+	public void printBoard(Integer[] state){
+		// Integer[] state = states.get(moves);
 		for(int i = 0; i < state.length; i++){
 			if(state[i] == -1)
 				System.out.print(' ');
@@ -169,13 +168,18 @@ public class PSGame{
 			if(state[i] == 0)
 				System.out.print('o');
 			System.out.print(' ');
-			if (i%rows == 6)
+			if (i%rows == rows-1)
 				System.out.println();
 		}
+		System.out.println();
 	}
 
 	public void printResult(){
-		if(isVictory())
+		for(Integer[] state: states){
+			printBoard(state);
+		}
+		printSizes();
+		if (isVictory())
 			System.out.println("YOU WIN");
 		else
 			System.out.println("You're an egg-nor-a-moose");
@@ -184,6 +188,6 @@ public class PSGame{
 	public void printAll(){
 		printSpaces();
 		printSizes();
-		printBoard();
+		printBoard(states.get(states.size()-1));
 	}
 }

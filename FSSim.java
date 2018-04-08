@@ -9,17 +9,19 @@ public class FSSim{
 		// 	game.initializeArrayLists();
 		// 	game.trial();
 		// 	if(game.isVictory()){
+		// 		game.printResult();
 		// 		wins++;
 		// 		break;
 		// 	}
 		// 	else
 		// 		losses++;
 		// }
-		FSBoard board = new FSBoard(Integer.parseInt(args[1]),Integer.parseInt(args[1]));
-		board.setup(args[0], Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+		FSBoard board = new FSBoard(args[0],Integer.parseInt(args[1]),Integer.parseInt(args[1]));
+		board.setup(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
 		PSGame game = new PSGame(board);
 		game.initialize();
 		game.trial();
+		game.printResult();
 		System.out.println(wins+" "+losses);
 	}
 }
