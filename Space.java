@@ -2,7 +2,7 @@ public class Space{
 
 	private int x;
 	private int y;
-	private int value;
+	private int status;
 
 	public Space(int x, int y){
 		this.x = x;
@@ -17,15 +17,15 @@ public class Space{
 		return y;
 	}
 
-	public int getValue(){
-		return value;
+	public int getStatus(){
+		return status;
 	}
 
-	public void setValue(int newVal){
-		value = newVal;
+	public void setStatus(int newStatus){
+		status = newStatus;
 	}
 
 	public String toString(){
-		return "X: "+x+ " Y: "+y+ " value: "+value;
+		return "X: "+x+ " Y: "+y+ " status: "+status;
 	}
 }

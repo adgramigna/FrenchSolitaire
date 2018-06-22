@@ -64,10 +64,10 @@ public class FSBoard{
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
 				spaces[i][j] = new Space(i,j);
-				spaces[i][j].setValue(-1);
+				spaces[i][j].setStatus(-1);
 				for (int k = 0; k <= rows/2; k++){
 					if ((i == k || i == rows-k-1) && (j >= cols/2-k-1 && j <= cols/2+k+1)){
-						spaces[i][j].setValue(1);
+						spaces[i][j].setStatus(1);
 					}
 				}
 			}
@@ -78,9 +78,9 @@ public class FSBoard{
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
 				spaces[i][j] = new Space(i,j);
-				spaces[i][j].setValue(-1);
+				spaces[i][j].setStatus(-1);
 				if(j <= cols/2+1 && j >= cols/2-1 || i >= rows/2-1 && i <= rows/2+1){
-					spaces[i][j].setValue(1);
+					spaces[i][j].setStatus(1);
 				}
 			}
 		}
@@ -90,17 +90,17 @@ public class FSBoard{
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j<cols; j++){
 				spaces[i][j] = new Space(i,j);
-				spaces[i][j].setValue(-1);
+				spaces[i][j].setStatus(-1);
 				if(i>=j){
-					spaces[i][j].setValue(1);
+					spaces[i][j].setStatus(1);
 				}
 			}
 		}
 	}
 
 	public void makeInitialEmpty(int emptyRow, int emptyCol){
-		if(spaces[emptyRow][emptyCol].getValue() != -1)
-			spaces[emptyRow][emptyCol].setValue(0);
+		if(spaces[emptyRow][emptyCol].getStatus() != -1)
+			spaces[emptyRow][emptyCol].setStatus(0);
 		else
 			System.out.println("Try again: Your board has no empty spaces.");
 	}
