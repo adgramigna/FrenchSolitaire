@@ -68,14 +68,27 @@ public class PSGame{
 	}
 
 	public void move(){
-		int rand = (int)(Math.random()*potentialMoveSpaces.size());
-		Space to = potentialMoveSpaces.get(rand);
-		List<Space> from = new ArrayList<Space>();
-		findFrom(to, from);
-		Space chosenFrom = from.get((int)(Math.random()*from.size()));
+		List<Space> jumpsFrom = new ArrayList<Space>();
+		List<Space> jumpsTo = new ArrayList<Space>();
+		for(Space p: potentialMoveSpaces){
+			System.out.println(shorthandSpace(p));
+			List<Space> from = new ArrayList<Space>();
+			findFrom(p, from);
+			for(Space f: from){
+				jumpsFrom.add(f);
+				jumpsTo.add(p);
+			}
+		}
+
+		int rand = (int)(Math.random()*jumpsFrom.size());
+		Space chosenFrom = jumpsFrom.get(rand);
+		Space to = jumpsTo.get(rand);
 
 		// System.out.println(to.toString());
 		// System.out.println(chosenFrom.toString());
+		
+		printPossibleJumps(jumpsFrom, jumpsTo);
+
 		Space over = findOver(to, chosenFrom);
 		printMovingSpaces(to, chosenFrom, over);
 
@@ -163,22 +176,11 @@ public class PSGame{
 				|| (s.getX()-2 >= 0 && spaces[s.getX()-2][s.getY()].getStatus() == 1 && spaces[s.getX()-1][s.getY()].getStatus()==1)
 				|| (s.getX()+2 < rows && spaces[s.getX()+2][s.getY()].getStatus() == 1 && spaces[s.getX()+1][s.getY()].getStatus()==1))
 				potentialMoveSpaces.add(s);
-				if(type.equals("T")){
+				if(type.equals("T") && !potentialMoveSpaces.contains(s)){
 					if ((s.getY()-2 >= 0 && s.getX()-2 >= 0 && spaces[s.getX()-2][s.getY()-2].getStatus()==1 && spaces[s.getX()-1][s.getY()-1].getStatus()==1)
 					|| (s.getY()+2 < cols && s.getX()+2 < rows && spaces[s.getX()+2][s.getY()+2].getStatus()==1 && spaces[s.getX()+1][s.getY()+1].getStatus()==1))
 					potentialMoveSpaces.add(s);
 				}
-		}
-	}
-
-	public void updatePath(Space to, Space chosenFrom){
-		int fx = chosenFrom.getX()+1;
-		int fy = chosenFrom.getY();
-		int tx = to.getX()+1;
-		int ty = to.getY();
-		path += whichLetter(fy)+Integer.toString(fx)+"-"+whichLetter(ty)+Integer.toString(tx);
-		if(potentialMoveSpaces.size() != 0){
-			path+= ", ";
 		}
 	}
 
@@ -188,8 +190,25 @@ public class PSGame{
 		return whichLetter(y)+x;
 	}
 
+	public void updatePath(Space to, Space chosenFrom){
+		path += shorthandSpace(chosenFrom)+"-"+shorthandSpace(to);
+		if(potentialMoveSpaces.size() != 0){
+			path+= ", ";
+		}
+	}
+
 	public void printMovingSpaces(Space to, Space chosenFrom, Space over){
-		System.out.println("To: "+ shorthandSpace(to) + " From: " + shorthandSpace(chosenFrom) + " Over: " + shorthandSpace(over));
+		System.out.println("From: "+ shorthandSpace(chosenFrom) + " to: " + shorthandSpace(to) + " Over: " + shorthandSpace(over));
+	}
+
+	public void printPossibleJumps(List<Space> jumpsFrom, List<Space> jumpsTo){
+		for(int i = 0; i <jumpsFrom.size(); i++){
+			System.out.print(shorthandSpace(jumpsFrom.get(i))+"-"+shorthandSpace(jumpsTo.get(i)));
+			if(i != jumpsFrom.size()-1){
+				System.out.print(", ");
+			}
+			System.out.println();
+		}
 	}
 
 	// public void updateSAX(){
@@ -223,13 +242,10 @@ public class PSGame{
 	// 		SAXCounts.add(SAX);
 	// 	}
 	// }
+
 	public void updateSAX(){
 		SAXCounts.add(board.calculateSAX());
 	}
-
-	// public boolean isT55(){
-	// 	return type.equals("T") && rows == 5 && cols == 5;
-	// }
 
 	public String whichLetter(int y){
 		switch(y){
