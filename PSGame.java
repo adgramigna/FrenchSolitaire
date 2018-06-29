@@ -82,6 +82,7 @@ public class PSGame{
 
 		updateUponMove(to, chosenFrom, over);
 		
+
 		updateArrayLists(to, chosenFrom, over);
 		updatePath(to, chosenFrom);
 		
