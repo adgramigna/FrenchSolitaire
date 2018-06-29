@@ -7,11 +7,14 @@ public class PSGame{
 	private Space[][] spaces;
 	private int rows;
 	private int cols;
+	private int SAX;
 	private String type;
 	private List<Space> emptySpaces;
 	private List<Space> filledSpaces;
 	private List<Space> potentialMoveSpaces;
+	private List<Space> preferredMoveSpaces;
 	private List<Integer[]> states;
+	private List<Integer> SAXCounts;
 	private String path;
 	
 	public PSGame(FSBoard board){
@@ -19,17 +22,21 @@ public class PSGame{
 		spaces = board.getSpaces();
 		rows = board.getRows();
 		cols = board.getCols();
+		SAX = board.getSAX();
 		type = board.getType();
 		emptySpaces = new ArrayList<Space>();
 		filledSpaces = new ArrayList<Space>();
 		potentialMoveSpaces = new ArrayList<Space>();
+		preferredMoveSpaces = new ArrayList<Space>();
 		states = new ArrayList<Integer[]>();
+		SAXCounts = new ArrayList<Integer>();
 		path = "Path: ";
 	}
 
 	public void initialize(){
 		initializeArrayLists();
 		updateStates();
+		updateSAX();
 	}
 
 	public void initializeArrayLists(){
@@ -82,6 +89,7 @@ public class PSGame{
 		updatePath(to, chosenFrom);
 		
 		updateStates();
+		updateSAX();
 		//printSizes();
 	}
 
@@ -138,8 +146,7 @@ public class PSGame{
 					|| (s.getY()+2 < cols && s.getX()+2 < rows && spaces[s.getX()+2][s.getY()+2].getStatus()==1 && spaces[s.getX()+1][s.getY()+1].getStatus()==1))
 					potentialMoveSpaces.add(s);
 				}
-		}
-		
+		}		
 	}
 
 	public void updatePath(Space to, Space chosenFrom){
@@ -151,6 +158,42 @@ public class PSGame{
 		if(potentialMoveSpaces.size() != 0){
 			path+= ", ";
 		}
+	}
+
+	public void updateSAX(){
+		//System.out.println("B4SAX"+SAX);
+		if (isT55()){
+			SAX = 0;
+			if (filledSpaces.contains(spaces[0][0]))
+				SAX--;
+			if (filledSpaces.contains(spaces[2][0]))
+				SAX--;
+			if (filledSpaces.contains(spaces[4][0]))
+				SAX--;
+			if (filledSpaces.contains(spaces[2][2]))
+				SAX--;
+			if (filledSpaces.contains(spaces[4][2]))
+				SAX--;
+			if (filledSpaces.contains(spaces[4][4]))
+				SAX--;
+			if (filledSpaces.contains(spaces[2][1]))
+				SAX++;
+			if (filledSpaces.contains(spaces[3][1]))
+				SAX++;
+			if (filledSpaces.contains(spaces[3][2]))
+				SAX++;
+			if (spaces[1][0].getStatus()+spaces[2][0].getStatus()+spaces[3][0].getStatus() >= 2)
+				SAX++;
+			if (spaces[4][1].getStatus()+spaces[4][2].getStatus()+spaces[4][3].getStatus() >= 2)
+				SAX++;
+			if (spaces[1][1].getStatus()+spaces[2][2].getStatus()+spaces[3][3].getStatus() >= 2)
+				SAX++;
+			SAXCounts.add(SAX);
+		}
+	}
+
+	public boolean isT55(){
+		return type.equals("T") && rows == 5 && cols == 5;
 	}
 
 	public String whichLetter(int y){
@@ -235,12 +278,12 @@ public class PSGame{
 			if (i%cols == cols-1)
 				System.out.println();
 		}
-		System.out.println();
 	}
 
 	public void printResult(){
 		for(Integer[] state: states){
 			printBoard(state);
+			System.out.println("SAX Count: "+SAXCounts.get(states.indexOf(state)));
 		}
 		System.out.println(path);
 		printSizes();

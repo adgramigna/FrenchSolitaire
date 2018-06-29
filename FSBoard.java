@@ -13,6 +13,7 @@ public class FSBoard{
 	private Space[][] spaces;
 	private int rows;
 	private int cols;
+	private int SAX;
 	private String type;
 
 	public FSBoard(String type, int rows, int cols){
@@ -37,6 +38,10 @@ public class FSBoard{
 
 	public int getCols(){
 		return cols;
+	}
+
+	public int getSAX(){
+		return SAX;
 	}
 
 	public String getType(){
