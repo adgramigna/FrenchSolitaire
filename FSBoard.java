@@ -53,7 +53,6 @@ public class FSBoard{
 	public int calculateSAX(){
 		SAX = 0;
 		if (isT55()){
-			//System.out.println(SAXCounts.get(SAXCounts.size()-1));
 			if (spaces[0][0].getStatus() == 1)
 				SAX--;
 			if (spaces[2][0].getStatus() == 1)
