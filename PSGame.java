@@ -83,9 +83,9 @@ public class PSGame{
 			chosenFrom = jumpsFrom.get(rand);
 			to = jumpsTo.get(rand);
 			over = findOver(to, chosenFrom);
-			printPossibleJumps(jumpsFrom, jumpsTo);
+			//printPossibleJumps(jumpsFrom, jumpsTo);
 
-			printMovingSpaces(to, chosenFrom, over);
+			//printMovingSpaces(to, chosenFrom, over);
 
 			updateUponMove(to, chosenFrom, over);
 			currSAX = board.calculateSAX();
@@ -263,8 +263,8 @@ public class PSGame{
 
 	public void trial(){
 		while(potentialMoveSpaces.size()>0){
-			System.out.println(++moveNumber);
-			System.out.println();
+			//System.out.println(++moveNumber);
+			//System.out.println();
 			move();
 		}
 	}
@@ -313,6 +313,8 @@ public class PSGame{
 				System.out.println();
 			}
 		}
+		if(rows > 9)
+			System.out.println("NOTE: Path will not display properly because number of rows is too large");
 		System.out.println(path);
 		printSizes();
 		if (isVictory())

@@ -5,9 +5,6 @@
 //V1: Goal of this program is to find a winning path for the game of French Solitaire
 //For more information visit <<<1>>>
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FSBoard{
 
 	private Space[][] spaces;
