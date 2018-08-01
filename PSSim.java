@@ -1,6 +1,6 @@
 //Update numTrials to run a different number of trials
 
-public class FSSim{
+public class PSSim{
 	public static void main(String[] args){
 		int wins = 0;
 		int losses = 0;
@@ -8,7 +8,7 @@ public class FSSim{
 		for(int i = 1; i<=numTrials; i++){
 			if(i%1000000 == 0)
 				System.out.println(i); //to see how close we are to finishing; runtime high with large number of trials
-			FSBoard board = new FSBoard(args[0],Integer.parseInt(args[1]),Integer.parseInt(args[1])); //F 7, for example
+			PSBoard board = new PSBoard(args[0],Integer.parseInt(args[1]),Integer.parseInt(args[1])); //F 7, for example
 			board.setup(Integer.parseInt(args[2]), Integer.parseInt(args[3])); //initalEmptySpace location, 0 2 for example.
 			PSGame game = new PSGame(board);
 			game.initialize();

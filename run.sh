@@ -1,6 +1,6 @@
 #!/bin/bash
 javac Space.java
-javac FSSim.java
-javac FSBoard.java
+javac PSBoard.java
 javac PSGame.java
-java FSSim $1 $2 $3 $4
+javac PSSim.java
+java PSSim $1 $2 $3 $4

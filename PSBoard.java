@@ -1,11 +1,7 @@
 //Andrew Gramigna, 2018
 
-//French Solitaire Simulator.
 
-//V1: Goal of this program is to find a winning path for the game of French Solitaire
-//For more information visit <<<1>>>
-
-public class FSBoard{
+public class PSBoard{
 
 	private Space[][] spaces;
 	private int rows;
@@ -13,7 +9,7 @@ public class FSBoard{
 	private String type;
 	private int SAX;
 
-	public FSBoard(String type, int rows, int cols){
+	public PSBoard(String type, int rows, int cols){
 		spaces = new Space[rows][cols];
 		this.rows = rows;
 		this.cols = cols;

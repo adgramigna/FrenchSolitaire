@@ -3,7 +3,7 @@ import java.util.List;
 
 public class PSGame{
 
-	private FSBoard board;
+	private PSBoard board;
 	private Space[][] spaces;
 	private int rows;
 	private int cols;
@@ -17,7 +17,7 @@ public class PSGame{
 	private List<Integer> SAXCounts;
 	private String path;
 	
-	public PSGame(FSBoard board){
+	public PSGame(PSBoard board){
 		this.board = board;
 		spaces = board.getSpaces();
 		rows = board.getRows();
@@ -257,7 +257,7 @@ public class PSGame{
 		}
 	}
 
-	public FSBoard getBoard(){
+	public PSBoard getBoard(){
 		return board;
 	}
 
