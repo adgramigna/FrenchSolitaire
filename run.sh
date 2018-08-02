@@ -1,3 +1,5 @@
+#Example: ./run.sh E 7 0 2
+
 #!/bin/bash
 javac Space.java
 javac PSBoard.java
