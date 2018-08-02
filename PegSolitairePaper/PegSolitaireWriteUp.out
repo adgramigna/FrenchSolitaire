@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Java Program: Random Moves Only}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Space.java}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{PSBoard.java}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{PSGame.java}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{PSSim.java}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Board Difficulty: Random Moves Only}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{The French Board F\1377}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{The English Board E\1377}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Triangular Boards}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Analysis}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Improving the Win Rate in the T\1375 Board}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Updates to the Program}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Updated T\1375 Results Adhering to the SAX Count}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Future Work}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Removals}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Resource Counts}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 18
+\BOOKMARK [1][-]{appendix.A}{Solutions to Selected Problems}{}% 19
+\BOOKMARK [2][-]{subsection.A.1}{F\1377}{appendix.A}% 20
+\BOOKMARK [3][-]{subsubsection.A.1.1}{c1}{subsection.A.1}% 21
+\BOOKMARK [3][-]{subsubsection.A.1.2}{d2}{subsection.A.1}% 22
+\BOOKMARK [3][-]{subsubsection.A.1.3}{d3}{subsection.A.1}% 23
+\BOOKMARK [2][-]{subsection.A.2}{E\1377}{appendix.A}% 24
+\BOOKMARK [3][-]{subsubsection.A.2.1}{c1}{subsection.A.2}% 25
+\BOOKMARK [3][-]{subsubsection.A.2.2}{c2}{subsection.A.2}% 26
+\BOOKMARK [3][-]{subsubsection.A.2.3}{c3}{subsection.A.2}% 27
+\BOOKMARK [3][-]{subsubsection.A.2.4}{d1}{subsection.A.2}% 28
+\BOOKMARK [3][-]{subsubsection.A.2.5}{d2}{subsection.A.2}% 29
+\BOOKMARK [3][-]{subsubsection.A.2.6}{d3}{subsection.A.2}% 30
+\BOOKMARK [3][-]{subsubsection.A.2.7}{d4}{subsection.A.2}% 31
+\BOOKMARK [2][-]{subsection.A.3}{T\1375}{appendix.A}% 32
+\BOOKMARK [3][-]{subsubsection.A.3.1}{a1}{subsection.A.3}% 33
+\BOOKMARK [3][-]{subsubsection.A.3.2}{a2}{subsection.A.3}% 34
+\BOOKMARK [3][-]{subsubsection.A.3.3}{a3}{subsection.A.3}% 35
+\BOOKMARK [3][-]{subsubsection.A.3.4}{b3}{subsection.A.3}% 36

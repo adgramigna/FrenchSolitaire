@@ -1,8 +1,10 @@
+//Andrew Gramigna, 2018
+
 public class Space{
 
-	private int x;
-	private int y;
-	private int status;
+	private int x; //row
+	private int y; //column
+	private int status; //-1, 0 ,1 (non-existent, empty, filled)
 
 	public Space(int x, int y){
 		this.x = x;
@@ -21,7 +23,7 @@ public class Space{
 		return status;
 	}
 
-	public void setStatus(int newStatus){
+	public void setStatus(int newStatus){ //switch from filled to empty during game
 		status = newStatus;
 	}
 
