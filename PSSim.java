@@ -6,7 +6,7 @@ public class PSSim{
 	public static void main(String[] args){
 		int wins = 0;
 		int losses = 0;
-		int numTrials = 10; //Update numTrials to run a different number of trials
+		int numTrials = 1000000; //Update numTrials to run a different number of trials
 		for(int i = 1; i<=numTrials; i++){
 			if(i%1000000 == 0)
 				System.out.println(i); //to see how close we are to finishing; runtime high with large number of trials
@@ -15,7 +15,7 @@ public class PSSim{
 			PSGame game = new PSGame(board);
 			game.initialize();
 			game.trial();
-			game.printResult(); //printResult every trial when uncommented
+			//game.printResult(); //printResult every trial when uncommented
 			if(game.isVictory()){
 				//game.printResult(); //only printResult on a victory
 				wins++;

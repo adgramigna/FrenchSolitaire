@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 AUG 2018 02:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 AUG 2018 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,97 +657,102 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package epstopdf Info: Source file: <Figure1.eps>
+Package epstopdf Info: Source file: <Figures/Figure1.eps>
 (epstopdf)                    date: 2018-04-05 23:16:06
 (epstopdf)                    size: 501434 bytes
-(epstopdf)             Output file: <Figure1-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure1-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-05 23:16:10
 (epstopdf)                    size: 25789 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure1-eps-converted-to.p
-df Figure1.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure1-eps-conver
+ted-to.pdf Figures/Figure1.eps>
 (epstopdf)             \includegraphics on input line 85.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure1-eps-converted-to.pdf, id=154, 154.5775pt x 202.7575pt>
-File: Figure1-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure1-eps-converted-to.pdf, id=154, 154.5775pt x 202.7575pt>
+File: Figures/Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure1-eps-converted-to.pdf>
-Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 85.
+<use Figures/Figure1-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure1-eps-converted-to.pdf used on input lin
+e 85.
 (pdftex.def)             Requested size: 154.5771pt x 202.757pt.
-Package epstopdf Info: Source file: <Figure2.eps>
+Package epstopdf Info: Source file: <Figures/Figure2.eps>
 (epstopdf)                    date: 2018-04-08 21:45:38
 (epstopdf)                    size: 469390 bytes
-(epstopdf)             Output file: <Figure2-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure2-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-08 21:55:04
 (epstopdf)                    size: 21187 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure2-eps-converted-to.p
-df Figure2.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure2-eps-conver
+ted-to.pdf Figures/Figure2.eps>
 (epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure2-eps-converted-to.pdf, id=155, 231.86626pt x 102.3825pt>
-File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure2-eps-converted-to.pdf, id=155, 231.86626pt x 102.3825pt>
+File: Figures/Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure2-eps-converted-to.pdf>
-Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 92.
+<use Figures/Figure2-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure2-eps-converted-to.pdf used on input lin
+e 92.
 (pdftex.def)             Requested size: 231.86568pt x 102.38225pt.
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./F
-igure1-eps-converted-to.pdf> <./Figure2-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Figure3.eps>
+igures/Figure1-eps-converted-to.pdf> <./Figures/Figure2-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/Figure3.eps>
 (epstopdf)                    date: 2018-04-08 18:40:58
 (epstopdf)                    size: 868650 bytes
-(epstopdf)             Output file: <Figure3-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure3-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-08 18:41:04
 (epstopdf)                    size: 100212 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure3-eps-converted-to.p
-df Figure3.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure3-eps-conver
+ted-to.pdf Figures/Figure3.eps>
 (epstopdf)             \includegraphics on input line 111.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure3-eps-converted-to.pdf, id=202, 116.435pt x 125.46875pt>
-File: Figure3-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure3-eps-converted-to.pdf, id=202, 116.435pt x 125.46875pt>
+File: Figures/Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure3-eps-converted-to.pdf>
-Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 111.
+<use Figures/Figure3-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure3-eps-converted-to.pdf used on input lin
+e 111.
 (pdftex.def)             Requested size: 116.43471pt x 125.46843pt.
- [3 <./Figure3-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Figure4.eps>
+ [3 <./Figures/Figure3-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/Figure4.eps>
 (epstopdf)                    date: 2018-04-11 01:40:11
 (epstopdf)                    size: 483406 bytes
-(epstopdf)             Output file: <Figure4-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure4-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-11 01:40:16
 (epstopdf)                    size: 22803 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure4-eps-converted-to.p
-df Figure4.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure4-eps-conver
+ted-to.pdf Figures/Figure4.eps>
 (epstopdf)             \includegraphics on input line 135.
 Package epstopdf Info: Output file is already uptodate.
+ <Figures/Figure4-eps-converted-to.pdf, id=218, 264.99pt x 114.4275pt>
+File: Figures/Figure4-eps-converted-to.pdf Graphic file (type pdf)
 
-<Figure4-eps-converted-to.pdf, id=218, 264.99pt x 114.4275pt>
-File: Figure4-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Figure4-eps-converted-to.pdf>
-Package pdftex.def Info: Figure4-eps-converted-to.pdf used on input line 135.
+<use Figures/Figure4-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure4-eps-converted-to.pdf used on input lin
+e 135.
 (pdftex.def)             Requested size: 264.98935pt x 114.42722pt.
-Package epstopdf Info: Source file: <Figure5.eps>
+Package epstopdf Info: Source file: <Figures/Figure5.eps>
 (epstopdf)                    date: 2018-04-11 01:40:08
 (epstopdf)                    size: 520594 bytes
-(epstopdf)             Output file: <Figure5-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure5-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-11 01:40:16
 (epstopdf)                    size: 24780 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure5-eps-converted-to.p
-df Figure5.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure5-eps-conver
+ted-to.pdf Figures/Figure5.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure5-eps-converted-to.pdf, id=219, 257.96375pt x 114.4275pt>
-File: Figure5-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure5-eps-converted-to.pdf, id=219, 257.96375pt x 114.4275pt>
+File: Figures/Figure5-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure5-eps-converted-to.pdf>
-Package pdftex.def Info: Figure5-eps-converted-to.pdf used on input line 142.
+<use Figures/Figure5-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure5-eps-converted-to.pdf used on input lin
+e 142.
 (pdftex.def)             Requested size: 257.9631pt x 114.42722pt.
- [4 <./Figure4-eps-converted-to.pdf> <./Figure5-eps-converted-to.pdf>]
+ [4 <./Figures/Figure4-eps-converted-to.pdf> <./Figures/Figure5-eps-converted-t
+o.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 160.
@@ -756,23 +761,24 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 160.
 
-Package epstopdf Info: Source file: <Figure6.eps>
+Package epstopdf Info: Source file: <Figures/Figure6.eps>
 (epstopdf)                    date: 2018-04-11 01:36:08
 (epstopdf)                    size: 532614 bytes
-(epstopdf)             Output file: <Figure6-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure6-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-11 01:36:27
 (epstopdf)                    size: 25426 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure6-eps-converted-to.p
-df Figure6.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure6-eps-conver
+ted-to.pdf Figures/Figure6.eps>
 (epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
-<Figure6-eps-converted-to.pdf, id=246, 371.3875pt x 102.3825pt>
-File: Figure6-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure6-eps-converted-to.pdf, id=246, 371.3875pt x 102.3825pt>
+File: Figures/Figure6-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure6-eps-converted-to.pdf>
-Package pdftex.def Info: Figure6-eps-converted-to.pdf used on input line 183.
+<use Figures/Figure6-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure6-eps-converted-to.pdf used on input lin
+e 183.
 (pdftex.def)             Requested size: 371.38658pt x 102.38225pt.
- [5 <./Figure6-eps-converted-to.pdf>]
+ [5 <./Figures/Figure6-eps-converted-to.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 193.
@@ -781,41 +787,43 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 193.
 
-Package epstopdf Info: Source file: <Figure7.eps>
+Package epstopdf Info: Source file: <Figures/Figure7.eps>
 (epstopdf)                    date: 2018-04-11 01:39:21
 (epstopdf)                    size: 713038 bytes
-(epstopdf)             Output file: <Figure7-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure7-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-11 01:39:41
 (epstopdf)                    size: 35972 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure7-eps-converted-to.p
-df Figure7.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure7-eps-conver
+ted-to.pdf Figures/Figure7.eps>
 (epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
-<Figure7-eps-converted-to.pdf, id=269, 433.62pt x 202.7575pt>
-File: Figure7-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure7-eps-converted-to.pdf, id=269, 433.62pt x 202.7575pt>
+File: Figures/Figure7-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure7-eps-converted-to.pdf>
-Package pdftex.def Info: Figure7-eps-converted-to.pdf used on input line 224.
+<use Figures/Figure7-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure7-eps-converted-to.pdf used on input lin
+e 224.
 (pdftex.def)             Requested size: 433.61894pt x 202.757pt.
  [6]
-Package epstopdf Info: Source file: <Figure8.eps>
+Package epstopdf Info: Source file: <Figures/Figure8.eps>
 (epstopdf)                    date: 2018-04-12 15:20:14
 (epstopdf)                    size: 641034 bytes
-(epstopdf)             Output file: <Figure8-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure8-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-04-12 15:20:19
 (epstopdf)                    size: 28467 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure8-eps-converted-to.p
-df Figure8.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure8-eps-conver
+ted-to.pdf Figures/Figure8.eps>
 (epstopdf)             \includegraphics on input line 277.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure8-eps-converted-to.pdf, id=279, 462.72874pt x 118.4425pt>
-File: Figure8-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure8-eps-converted-to.pdf, id=279, 462.72874pt x 118.4425pt>
+File: Figures/Figure8-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure8-eps-converted-to.pdf>
-Package pdftex.def Info: Figure8-eps-converted-to.pdf used on input line 277.
+<use Figures/Figure8-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure8-eps-converted-to.pdf used on input lin
+e 277.
 (pdftex.def)             Requested size: 462.72762pt x 118.4422pt.
- [7 <./Figure7-eps-converted-to.pdf>]
+ [7 <./Figures/Figure7-eps-converted-to.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 288.
@@ -829,28 +837,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
 
-Package epstopdf Info: Source file: <Figure9.eps>
+Package epstopdf Info: Source file: <Figures/Figure9.eps>
 (epstopdf)                    date: 2018-07-31 12:41:58
 (epstopdf)                    size: 470790 bytes
-(epstopdf)             Output file: <Figure9-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure9-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-07-31 12:43:11
 (epstopdf)                    size: 30699 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure9-eps-converted-to.p
-df Figure9.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure9-eps-conver
+ted-to.pdf Figures/Figure9.eps>
 (epstopdf)             \includegraphics on input line 295.
 Package epstopdf Info: Output file is already uptodate.
-<Figure9-eps-converted-to.pdf, id=297, 132.495pt x 122.4575pt>
-File: Figure9-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure9-eps-converted-to.pdf, id=297, 132.495pt x 122.4575pt>
+File: Figures/Figure9-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure9-eps-converted-to.pdf>
-Package pdftex.def Info: Figure9-eps-converted-to.pdf used on input line 295.
+<use Figures/Figure9-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure9-eps-converted-to.pdf used on input lin
+e 295.
 (pdftex.def)             Requested size: 132.49466pt x 122.45718pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 300--303
 
  []
 
-[8 <./Figure8-eps-converted-to.pdf> <./Figure9-eps-converted-to.pdf>]
+[8 <./Figures/Figure8-eps-converted-to.pdf> <./Figures/Figure9-eps-converted-to
+.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 324.
@@ -860,41 +870,43 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 324.
 
 [9]
-Package epstopdf Info: Source file: <Figure10.eps>
+Package epstopdf Info: Source file: <Figures/Figure10.eps>
 (epstopdf)                    date: 2018-07-31 10:24:11
 (epstopdf)                    size: 523490 bytes
-(epstopdf)             Output file: <Figure10-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure10-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-07-31 10:24:30
 (epstopdf)                    size: 22717 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure10-eps-converted-to.
-pdf Figure10.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure10-eps-conve
+rted-to.pdf Figures/Figure10.eps>
 (epstopdf)             \includegraphics on input line 356.
 Package epstopdf Info: Output file is already uptodate.
- <Figure10-eps-converted-to.pdf, id=342, 285.065pt x 135.50626pt>
-File: Figure10-eps-converted-to.pdf Graphic file (type pdf)
+ <Figures/Figure10-eps-converted-to.pdf, id=342, 285.065pt x 135.50626pt>
+File: Figures/Figure10-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure10-eps-converted-to.pdf>
-Package pdftex.def Info: Figure10-eps-converted-to.pdf used on input line 356.
+<use Figures/Figure10-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure10-eps-converted-to.pdf used on input li
+ne 356.
 (pdftex.def)             Requested size: 285.0643pt x 135.5059pt.
- [10 <./Figure10-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Figure11.eps>
+ [10 <./Figures/Figure10-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/Figure11.eps>
 (epstopdf)                    date: 2018-08-02 01:31:49
 (epstopdf)                    size: 457366 bytes
-(epstopdf)             Output file: <Figure11-eps-converted-to.pdf>
+(epstopdf)             Output file: <Figures/Figure11-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-08-02 01:32:34
 (epstopdf)                    size: 23729 bytes
-(epstopdf)             Command: <repstopdf --outfile=Figure11-eps-converted-to.
-pdf Figure11.eps>
+(epstopdf)             Command: <repstopdf --outfile=Figures/Figure11-eps-conve
+rted-to.pdf Figures/Figure11.eps>
 (epstopdf)             \includegraphics on input line 370.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure11-eps-converted-to.pdf, id=361, 114.4275pt x 114.4275pt>
-File: Figure11-eps-converted-to.pdf Graphic file (type pdf)
+<Figures/Figure11-eps-converted-to.pdf, id=361, 114.4275pt x 114.4275pt>
+File: Figures/Figure11-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Figure11-eps-converted-to.pdf>
-Package pdftex.def Info: Figure11-eps-converted-to.pdf used on input line 370.
+<use Figures/Figure11-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Figure11-eps-converted-to.pdf used on input li
+ne 370.
 (pdftex.def)             Requested size: 114.42722pt x 114.42722pt.
- [11 <./Figure11-eps-converted-to.pdf>]
+ [11 <./Figures/Figure11-eps-converted-to.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 385.
@@ -1041,12 +1053,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 448.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
 Package rerunfilecheck Info: File `PegSolitaireWriteUp.out' has not changed.
 (rerunfilecheck)             Checksum: 52F72BBFC1FD8AE2E9F726F485594785;2262.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
- 15465 strings out of 492995
- 282418 string characters out of 6132704
- 371997 words of memory out of 5000000
+ 15466 strings out of 492995
+ 282778 string characters out of 6132704
+ 369996 words of memory out of 5000000
  18786 multiletter control sequences out of 15000+600000
  542453 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1071,7 +1087,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on PegSolitaireWriteUp.pdf (14 pages, 628584 bytes).
+Output written on PegSolitaireWriteUp.pdf (14 pages, 628638 bytes).
 PDF statistics:
  482 PDF objects out of 1000 (max. 8388607)
  408 compressed objects within 5 object streams

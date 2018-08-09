@@ -82,14 +82,14 @@ Throughout this paper I will be using a shorthand notation to easily specify the
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure1.eps}
+f\epsfig{file=Figures/Figure1.eps}
 \caption{Sample puzzle on the traditional 37 space French Board ($F_7$) using the traditional labeling system of the rows being numbers and the columns being letters.}
 \label{fig1}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure2.eps}
+\epsfig{file=Figures/Figure2.eps}
 \caption{Sample puzzles on the traditional 33 space English Board ($E_7$) and the traditional Triangular Board ($T_5$)}
 \label{fig2}
 \end{figure}
@@ -108,7 +108,7 @@ PSBoard.java has methods that initialize the 2-D Space array differently based o
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure3.eps}
+\epsfig{file=Figures/Figure3.eps}
 \caption{How the board from Figure~\ref{fig1} is represented in my Java code.}
 \label{fig3}
 \end{figure}
@@ -132,14 +132,14 @@ For an entire trial the move() method is executed continuously until we have no 
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure4.eps}
+\epsfig{file=Figures/Figure4.eps}
 \caption{Left: Possible jumps at the beginning of a game of an $E_7$ board. A green peg will jump over the adjacent red peg. Right: An example of a possible state later in this game. Note the blue Spaces $b3$, $b4$ and $d2$ are \textit{emptySpaces} but not \textit{potentialMoveSpaces} because there is no peg able to jump into either of these Spaces at the current state.}
 \label{fig4}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure5.eps}
+\epsfig{file=Figures/Figure5.eps}
 \caption{Left: Possible jumps at the beginning of a game of an $T_7$ board. Note the two additional places to jump from in a Triangular board, $a3$ and $e7$, with \textit{potentialMoveSpace} $c5$. Right: Traditional indexing on a Triangular board ($T_5$ shown).}
 \label{fig5}
 \end{figure}
@@ -180,7 +180,7 @@ F & 7 & d3 & $8.0*10^{-8}$ & 12,500,000\\
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure6.eps}
+\epsfig{file=Figures/Figure6.eps}
 \caption{Different initial positions of $F_7$ boards.}
 \label{fig6}
 \end{figure}
@@ -221,7 +221,7 @@ E & 7 & d4 & $4.0*10^{-8}$ & 25,000,000\\
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure7.eps}
+\epsfig{file=Figures/Figure7.eps}
 \caption{Different initial positions of $E_7$ boards.}
 \label{fig7}
 \end{figure} 
@@ -274,7 +274,7 @@ T & 8 & a3 & $3.3189*10^{-4}$ & 3,013\\
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure8.eps}
+\epsfig{file=Figures/Figure8.eps}
 \caption{$T_5$ through $T_8$ with various initial states. In all tests the \textit{initialEmptySpace} is in one of these 4 Spaces.}
 \label{fig8}
 \end{figure}
@@ -292,7 +292,7 @@ Irvin and Robert Hentzel are credited with creating the \textbf{SAX Count} in th
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure9.eps}
+\epsfig{file=Figures/Figure9.eps}
 \caption{The $T_5$ board labeled specifically to visualize the SAX count of the board.}
 \label{fig9}
 \end{figure}
@@ -353,7 +353,7 @@ If I were to continue looking to make improvements to my program, I would want t
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure10.eps}
+\epsfig{file=Figures/Figure10.eps}
 \caption{The \textit{six-removal} and \textit{L-removal} shown.  The six-removal is shown in the top half and the L-removal in the bottom half. Left:  Our board before both removals. Right: Our board after both removals.}
 \label{fig10}
 \end{figure}
@@ -367,7 +367,7 @@ A \textbf{resource count} (sometimes referred to as a pagoda function) is a func
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figure11.eps}
+\epsfig{file=Figures/Figure11.eps}
 \caption{A popular resource count for the English board $E_7$~\cite{Beasley}. The evaluation of the position of the left board in Figure~\ref{fig10} in relation to this resource count is 17, computed by adding the count of the filled spaces.}
 \label{fig11}
 \end{figure}
