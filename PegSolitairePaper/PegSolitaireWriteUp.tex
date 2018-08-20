@@ -18,12 +18,14 @@ citecolor=webgreen]{hyperref}
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
 
-\usepackage{epsfig}                                                                               
+\usepackage{epsfig}                                                                        
 \usepackage{amsmath,amssymb,amsthm,eucal}
 \usepackage{amsfonts}
-
+\usepackage{amsthm}
 
 \newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary}{Corollary}
 
 \setlength{\textwidth}{6.5in}                       
 \setlength{\oddsidemargin}{.1in}
@@ -44,12 +46,14 @@ citecolor=webgreen]{hyperref}
 
 \newcommand\tab[1][.5cm]{\hspace*{#1}}
 \usepackage[strings]{underscore}
+\usepackage[margin=1cm]{caption}
+\usepackage{tabularx}
+\usepackage{subfigure}
 
-
-% Figures
-% Figure 1: Figure1.eps, Sample $F_7$ board and standard indexing notation
+% Figures- Made With Adobe Illustrator
+% Figure 1: Figure1, Sample $F_7$ board and standard indexing notation
 % Figure 2: Figure2..eps, Sample $E_7$ and $T_5$ boards
-% Figure 3: Figure3.eps, $F_7$ board expressed in Java code
+% Figure 3: Figure3.eps and Figure1Test3. $F_7$ board expressed in Java code
 % Figure 4: Figure4.eps, Possible jumps in an $E_7$ board/display of potentialMoveSpaces
 % Figure 5: Figure5.eps, Possible jumps in a $T_7% board/standard notation for $T_5$
 % Figure 6: Figure6.eps, Different initial positions of $F_7$ boards
@@ -59,7 +63,7 @@ citecolor=webgreen]{hyperref}
 % Figure 10: Figure10.eps, six-removal and L-removal in an $E_7$ board.
 % Figure 11: Figure11.eps, "spine-count" resource count in and $E_7$ board.
 
-\title{Peg Solitaire: A Study on Which Boards are the Most Favorable to Solve}
+\title{Peg Solitaire: A Study on Board Difficulty}
 
 \author{Andrew D. Gramigna}
 
@@ -82,7 +86,8 @@ Throughout this paper I will be using a shorthand notation to easily specify the
 
 \begin{figure}[htb]
 \centering
-f\epsfig{file=Figures/Figure1.eps}
+%\epsfig{file=Figures/Figure1.eps}
+\includegraphics[width  = 5 cm]{Figures/Figure1}
 \caption{Sample puzzle on the traditional 37 space French Board ($F_7$) using the traditional labeling system of the rows being numbers and the columns being letters.}
 \label{fig1}
 \end{figure}
@@ -108,7 +113,9 @@ PSBoard.java has methods that initialize the 2-D Space array differently based o
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figures/Figure3.eps}
+\subfigure{\epsfig{file=Figures/Figure3.eps}}
+\hspace{.1\textwidth}
+\subfigure{\includegraphics[width  = 4.6 cm]{Figures/Figure1}}
 \caption{How the board from Figure~\ref{fig1} is represented in my Java code.}
 \label{fig3}
 \end{figure}
@@ -162,9 +169,9 @@ In order to determine which boards are easiest to solve, my program simulated pl
 This was the most difficult board to simulate because of the incredibly low win rate. In the board $F_7$, there are three non-isomorphic starting positions for the empty space that allow for a solvable board ~\cite{Brassine}, shown in Figure~\ref{fig6}. All other positions are either isomorphic to these three, or represent an initial state that is already unsolvable. A non-isomorphic, solvable $F_7$ board has the \textit{initialEmptySpace} at $c1$, $d2$, or $d3$. After conducting 100,000,000 trials of strictly random jumps for each of the three unique initial positions of $F_7$, I obtained the following results:
 \begin{table}[htb]
 \begin{center} 
-\begin{tabular}{ c  c  c  c  c }
+\begin{tabularx}{.88\textwidth}{ c  c  c  c  c }
 \hline
-\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Games until Victory}\\
+\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Trials until Win}\\
 \hline
 F & 7 & c1 & $1.3*10^{-7}$ & 7,692,308\\
 
@@ -172,7 +179,7 @@ F & 7 & d2 & $3.0*10^{-8}$ & 33,333,333\\
 
 F & 7 & d3 & $8.0*10^{-8}$ & 12,500,000\\
 
-\end{tabular}
+\end{tabularx}
 \caption{Win rates of the three non-isomorphic $F_7$ boards. The last column is obtained by taking the floor of the number of trials divided by the number of wins.}
 \label{tab1}
 \end{center} 
@@ -194,11 +201,13 @@ It is important to note that my data for these boards is not entirely conclusive
 \label{3.2EnglishE7}
 For the English Board , there are 7 non-isomorphic solvable starting positions, shown in Figure~\ref{fig7}. These have the location of the \textit{initialEmptySpace} at either $c1$, $c2$, $c3$, $d1$, $d2$, $d3$, or $d4$~\cite{Beasley}. After conducting 100,000,000 trials of strictly random jumps for each of the seven unique initial positions of $E_7$, I obtained the following results:
 
+
+
 \begin{table}[htb]
 \begin{center} 
-\begin{tabular}{ c  c  c  c  c }
+\begin{tabularx}{.88\textwidth}{ c  c  c  c  c }
 \hline
-\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Games until Victory}\\
+\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Trials until Win}\\
 \hline
 E & 7 & c1 & $6.14*10^{-6}$ & 162,866\\
 
@@ -213,7 +222,7 @@ E & 7 & d2 & $2.06*10^{-6}$& 485,437\\
 E & 7 & d3 & $3.85*10^{-6}$ & 259,740\\
 
 E & 7 & d4 & $4.0*10^{-8}$ & 25,000,000\\
-\end{tabular}
+\end{tabularx}
 \caption{Win rates of the unique $E_7$ boards.}
 \label{tab2}
 \end{center} 
@@ -221,7 +230,7 @@ E & 7 & d4 & $4.0*10^{-8}$ & 25,000,000\\
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figures/Figure7.eps}
+\epsfig{file=Figures/Figure7.eps, width = .88\textwidth}
 \caption{Different initial positions of $E_7$ boards.}
 \label{fig7}
 \end{figure} 
@@ -238,9 +247,9 @@ For the triangular boards, I tested on different values for $N$ and different po
 
 \begin{table}[htb]
 \begin{center} 
-\begin{tabular}{ c  c  c  c  c }
+\begin{tabularx}{.88\textwidth}{ c  c  c  c  c }
 \hline
-\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Games until Victory}\\
+\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Trials until Win}\\
 \hline
 T & 5 & a1 & $0.00686670$ & 146\\
 
@@ -266,7 +275,7 @@ T & 8 & a2 & $3.3302*10^{-4}$& 3,003\\
 
 T & 8 & a3 & $3.3189*10^{-4}$ & 3,013\\
 
-\end{tabular}
+\end{tabularx}
 \caption{Win rates of the Triangular boards $T_5$-$T_8$ with various positions for the \textit{initialEmptySpace}.}
 \label{tab3}
 \end{center} 
@@ -274,12 +283,12 @@ T & 8 & a3 & $3.3189*10^{-4}$ & 3,013\\
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figures/Figure8.eps}
+\epsfig{file=Figures/Figure8.eps, width = .88\textwidth}
 \caption{$T_5$ through $T_8$ with various initial states. In all tests the \textit{initialEmptySpace} is in one of these 4 Spaces.}
 \label{fig8}
 \end{figure}
 
-The most obvious observation is it much more likely to win on a triangular board than and English or French board. This is even true in the boards $T_7$ and $T_8$, which have a similar number of spaces. Perhaps this is due to the two additional jumps possible in some states of a Triangular board as shown in Figure~\ref{fig5}. Also, this could be because of the layout of the board is much more centralized, it only takes a couple jumps to go from one end of the board to the other. For the first time, with triangular boards we see that winning a game by only making random moves can be done in a reasonable amount of time, unlike the French or English boards. However once again, the location of the \textit{initialEmptySpace} makes a significant difference on how likely it is to achieve a victory, though it is not as drastic of a difference as was seen with $E_7$.\\
+The most obvious observation is it much more likely to win on a triangular board than an English or French board. This is even true in the boards $T_7$ and $T_8$, which have a similar number of spaces. Perhaps this is due to the two additional jumps possible in some states of a Triangular board as shown in Figure~\ref{fig5}. Also, this could be because of the layout of the board is much more centralized, it only takes a couple jumps to go from one end of the board to the other. For the first time, with triangular boards we see that winning a game by only making random moves can be done in a reasonable amount of time, unlike the French or English boards. However once again, the location of the \textit{initialEmptySpace} makes a significant difference on how likely it is to achieve a victory, though it is not as drastic of a difference as was seen with $E_7$.\\
 \tab Additionally, the results show the boards $T_6$ and $T_8$ are significantly easier to solve than their counterparts of $T_5$ and $T_7$, respectively. I expect this pattern to continue for higher values of $N$. I am confident in the validity of my program since the ``Expected Games until Victory" for the 4 unique $T_5$ boards matches with Peg Solitaire researcher George Bell's results in \textit{Solving Triangular Peg Solitaire}~\cite{Bell}.
 
 \subsection{Analysis}
@@ -302,9 +311,9 @@ Irvin and Robert Hentzel are credited with creating the \textbf{SAX Count} in th
 \tab\large X =  The number pegs in spaces marked $-1$ in Figure~\ref{fig9}.\\
 
 \normalsize The SAX count of a board at a given state is determined by $S+A-X$~\cite{Hentzel}. It is impossible to make a jump that increases the SAX count~\cite{Bell}. Also, the lowest the SAX count can be in a solvable board is $-1$, because in order to have an SAX count less than$-1$, we must have two pegs remaining, which is not possible in a victory state. By combining these two pieces of information, we obtain:
-\begin{theorem}
+\begin{corollary}
 If the SAX count of a trial is ever below $-1$ at any state, any subsequent moves cannot result in a victory.
-\end{theorem} 
+\end{corollary} 
 Additionally, the highest possible SAX count at the initial state is 1, if we have $a1$ or $a3$ as the \textit{initialEmptySpace}. We should also note that our most difficult $T_5$ board to solve had the \textit{initialEmptySpace} at $b3$, and it is no coincidence that in this board the starting SAX count is $-1$. If we want to achieve a victory with this initial state, we cannot make a single jump that reduces the SAX count. This is very unlikely to happen when just making random jumps. The trick to improve our winning percentage, as coined by Hentzel and Hentzel, is never to make a jump that decreases the SAX count, if it can be avoided.
 
 Obviously, this is not always possible, there are some jumps that if we make, eventually we will reach a state where we are forced make a jump which decreases the SAX count to below -1. Moreover, it is also possible to never decrease the SAX count, and still end up with 2 or more pegs remaining. However, overall, the decision to try to avoid decreasing the SAX count provides a significant increase in win percentage of the $T_5$ board, as shown in Section~\ref{4.2UpatedResults}. 
@@ -327,9 +336,9 @@ If we repeat the experiment from Section~\ref{3.3Triangular} with the same param
 
 \begin{table}[htb]
 \begin{center} 
-\begin{tabular}{ c  c  c  c  c }
+\begin{tabularx}{.88\textwidth}{ c  c  c  c  c }
 \hline
-\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Games until Victory}\\
+\textbf{Type} & \textbf{Rows/Columns} &\textbf{Initial Empty} & \textbf{Win Rate} & \textbf{Expected Trials until Win}\\
 \hline
 T & 5 & a1 & $0.19865272$ & 5\\
 
@@ -339,7 +348,7 @@ T & 5 & a3 & $0.25353319$ & 4\\
 
 T & 5 & b3 & $0.0517215$ & 19\\
 
-\end{tabular}
+\end{tabularx}
 \caption{Win rates of the 4 non-isomorphic Triangular boards $T_5$ while attempting to only make jumps that don't decrease the SAX count.}
 \label{tab4}
 \end{center} 
