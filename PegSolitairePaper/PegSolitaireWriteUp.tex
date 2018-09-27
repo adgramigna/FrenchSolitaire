@@ -87,7 +87,7 @@ Throughout this paper I will be using a shorthand notation to easily specify the
 \begin{figure}[htb]
 \centering
 %\epsfig{file=Figures/Figure1.eps}
-\includegraphics[width  = 5 cm]{Figures/Figure1}
+\includegraphics[width  = 4.4 cm]{Figures/Figure1}
 \caption{Sample puzzle on the traditional 37 space French Board ($F_7$) using the traditional labeling system of the rows being numbers and the columns being letters.}
 \label{fig1}
 \end{figure}
@@ -95,7 +95,7 @@ Throughout this paper I will be using a shorthand notation to easily specify the
 \begin{figure}[htb]
 \centering
 \epsfig{file=Figures/Figure2.eps}
-\caption{Sample puzzles on the traditional 33 space English Board ($E_7$) and the traditional Triangular Board ($T_5$)}
+\caption{Sample puzzles on the traditional 33 space English Board ($E_7$) and the traditional Triangular Board ($T_5$).}
 \label{fig2}
 \end{figure}
 
@@ -114,7 +114,7 @@ PSBoard.java has methods that initialize the 2-D Space array differently based o
 \begin{figure}[htb]
 \centering
 \subfigure{\epsfig{file=Figures/Figure3.eps}}
-\hspace{.1\textwidth}
+\hspace{.08\textwidth}
 \subfigure{\includegraphics[width  = 4.6 cm]{Figures/Figure1}}
 \caption{How the board from Figure~\ref{fig1} is represented in my Java code.}
 \label{fig3}
@@ -139,14 +139,14 @@ For an entire trial the move() method is executed continuously until we have no 
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figures/Figure4.eps}
+\epsfig{file=Figures/Figure4.eps, width = .50\textwidth}
 \caption{Left: Possible jumps at the beginning of a game of an $E_7$ board. A green peg will jump over the adjacent red peg. Right: An example of a possible state later in this game. Note the blue Spaces $b3$, $b4$ and $d2$ are \textit{emptySpaces} but not \textit{potentialMoveSpaces} because there is no peg able to jump into either of these Spaces at the current state.}
 \label{fig4}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figures/Figure5.eps}
+\epsfig{file=Figures/Figure5.eps, width = .50\textwidth}
 \caption{Left: Possible jumps at the beginning of a game of an $T_7$ board. Note the two additional places to jump from in a Triangular board, $a3$ and $e7$, with \textit{potentialMoveSpace} $c5$. Right: Traditional indexing on a Triangular board ($T_5$ shown).}
 \label{fig5}
 \end{figure}
@@ -301,7 +301,7 @@ Irvin and Robert Hentzel are credited with creating the \textbf{SAX Count} in th
 
 \begin{figure}[htb]
 \centering
-\epsfig{file=Figures/Figure9.eps}
+\epsfig{file=Figures/Figure9.eps, width = .25\textwidth}
 \caption{The $T_5$ board labeled specifically to visualize the SAX count of the board.}
 \label{fig9}
 \end{figure}
@@ -372,7 +372,7 @@ Note that with a specific sequence of moves we are able remove a certain section
 The six and L-removals are the most common and therefore most useful types of removals, though Beasley goes over many more that can be helpful for solving the English board. If I were to continue to make improvements to the program, I would incorporate each scenario for when one of these removals is possible into my program and have it execute the specific removal. Whether or not this would actually improve the win rate remains to be seen. Due to the complexity of this and how the addition of these removals would make the code much longer and less friendly for the average user to understand, I chose to leave it out in this version, but hope to incorporate it sometime in the future.
 
 \subsection{Resource Counts}
-A \textbf{resource count} (sometimes referred to as a pagoda function) is a function that gives a value to each space on the board and has the property that any executed jump does not increase the resource count of a state of the board. The SAX count mentioned in Section~\ref{4SAX} is a type of resource count for the $T_5$ board; this is best visualized in Figure~\ref{fig9}. There are known resource counts for the English board $E_7$~\cite{Beasley}, but their effectiveness is not as clear cut as the SAX count is for $T_5$. They are more frequently used to see if a certain jump leads to an unsolvable board later on. This phenomenon is observed if the resource count at our current state is ever less than the resource count of the intended victory state (since the resource count can never increase, we know that the victory state is not possible to reach from our current state). I chose not to incorporate a resource count for $E_7$ into my program largely because there are so many potential known resource counts to use. Incorporating the resource count would add another variable to test, being ``which resource count is the most effective at improving the win rate of an $E_7$?", and I felt that was an unnecessary distraction from my ultimate goal.
+A \textbf{resource count} (sometimes referred to as a pagoda function) is a function that gives a value to each space on the board and has the property that any executed jump does not increase the resource count of a state of the board. The SAX count mentioned in Section~\ref{4SAX} is a type of resource count for the $T_5$ board; this is best visualized in Figure~\ref{fig9}. There are known resource counts for the English board $E_7$~\cite{Beasley}, but their effectiveness is not as clear cut as the SAX count is for $T_5$. They are more frequently used to see if a certain jump leads to an unsolvable board later on. This phenomenon is observed if the resource count at our current state is ever less than the resource count of the intended victory state (since the resource count can never increase, we know that the victory state is not possible to reach from our current state). I chose not to incorporate a resource count for $E_7$ into my program largely because there are so many potential known resource counts to use. Incorporating the resource count would add another variable to test, being ``which resource count is the most effective at improving the win rate of an $E_7$ board?", and I felt that was an unnecessary distraction from my ultimate goal.
 
 \begin{figure}[htb]
 \centering

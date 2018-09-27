@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 AUG 2018 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 SEP 2018 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,7 +701,7 @@ File: Figures/Figure1.png Graphic file (type png)
 
 <use Figures/Figure1.png>
 Package pdftex.def Info: Figures/Figure1.png used on input line 90.
-(pdftex.def)             Requested size: 142.26378pt x 142.7885pt.
+(pdftex.def)             Requested size: 125.19194pt x 125.65388pt.
 Package epstopdf Info: Source file: <Figures/Figure2.eps>
 (epstopdf)                    date: 2018-04-08 21:45:38
 (epstopdf)                    size: 469390 bytes
@@ -758,13 +758,13 @@ ted-to.pdf Figures/Figure4.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure4-eps-converted-to.pdf, id=216, 264.99pt x 114.4275pt>
+<Figures/Figure4-eps-converted-to.pdf, id=217, 264.99pt x 114.4275pt>
 File: Figures/Figure4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure4-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Figure4-eps-converted-to.pdf used on input lin
 e 142.
-(pdftex.def)             Requested size: 264.98935pt x 114.42722pt.
+(pdftex.def)             Requested size: 234.87749pt x 101.42459pt.
 Package epstopdf Info: Source file: <Figures/Figure5.eps>
 (epstopdf)                    date: 2018-04-11 01:40:08
 (epstopdf)                    size: 520594 bytes
@@ -776,13 +776,13 @@ ted-to.pdf Figures/Figure5.eps>
 (epstopdf)             \includegraphics on input line 149.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Figure5-eps-converted-to.pdf, id=217, 257.96375pt x 114.4275pt>
+<Figures/Figure5-eps-converted-to.pdf, id=218, 257.96375pt x 114.4275pt>
 File: Figures/Figure5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/Figure5-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Figure5-eps-converted-to.pdf used on input lin
 e 149.
-(pdftex.def)             Requested size: 257.9631pt x 114.42722pt.
+(pdftex.def)             Requested size: 234.87749pt x 104.19029pt.
  [4 <./Figures/Figure4-eps-converted-to.pdf> <./Figures/Figure5-eps-converted-t
 o.pdf>]
 
@@ -898,7 +898,7 @@ File: Figures/Figure9-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Figure9-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Figure9-eps-converted-to.pdf used on input lin
 e 304.
-(pdftex.def)             Requested size: 132.49466pt x 122.45718pt.
+(pdftex.def)             Requested size: 117.43874pt x 108.5421pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
@@ -1102,12 +1102,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
 Package rerunfilecheck Info: File `PegSolitaireWriteUp.out' has not changed.
 (rerunfilecheck)             Checksum: 52F72BBFC1FD8AE2E9F726F485594785;2262.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
  ) 
 Here is how much of TeX's memory you used:
  16587 strings out of 492995
  302800 string characters out of 6132704
- 392675 words of memory out of 5000000
+ 392676 words of memory out of 5000000
  19894 multiletter control sequences out of 15000+600000
  542453 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1132,7 +1136,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on PegSolitaireWriteUp.pdf (14 pages, 659146 bytes).
+Output written on PegSolitaireWriteUp.pdf (14 pages, 659260 bytes).
 PDF statistics:
  478 PDF objects out of 1000 (max. 8388607)
  404 compressed objects within 5 object streams
