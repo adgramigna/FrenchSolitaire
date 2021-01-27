@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 SEP 2018 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 JAN 2021 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1102,16 +1102,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
 Package rerunfilecheck Info: File `PegSolitaireWriteUp.out' has not changed.
 (rerunfilecheck)             Checksum: 52F72BBFC1FD8AE2E9F726F485594785;2262.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
  ) 
 Here is how much of TeX's memory you used:
  16587 strings out of 492995
  302800 string characters out of 6132704
- 392676 words of memory out of 5000000
+ 391676 words of memory out of 5000000
  19894 multiletter control sequences out of 15000+600000
  542453 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1136,7 +1132,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on PegSolitaireWriteUp.pdf (14 pages, 659260 bytes).
+Output written on PegSolitaireWriteUp.pdf (14 pages, 659271 bytes).
 PDF statistics:
  478 PDF objects out of 1000 (max. 8388607)
  404 compressed objects within 5 object streams
